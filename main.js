@@ -1,6 +1,3 @@
-/* Combined build: helper.js + index.js (no webpack required) */
-
-/* ── helper.js ── */
 const RED_SHADE = '#FF7276';
 
 function vibrate(duration) {
@@ -59,7 +56,7 @@ const updateColorsOfBoxes = (selected_location, boxes, selected_places, total_co
     }
 }
 
-/* ── index.js ── */
+
 var board = document.getElementById("board");
 var boxes = [];
 var total_cols = 8;
@@ -179,11 +176,9 @@ function attachBoxListeners() {
     });
 }
 
-// Initial setup
 making_all_taken_place_false(selected_places, total_rows, total_cols);
 buildBoard();
 
-// Restore saved game state
 var selected_location_ls = JSON.parse(localStorage.getItem('selected_location'));
 if (selected_location_ls != null) {
     selected_location = selected_location_ls;
